@@ -15,7 +15,7 @@
             <div id="right"><input type="button" onclick="location.href='index.html';" value="Logout" class="logout" /></div>
         </div>
         <div id="feed-profile">
-            <div id="profile-pic"><img src="images/avatar.png" /></div>
+            <div id="profile-pic"><img class="avatar" src="images/avatar.png" /></div>
             <div id="profile-info">
                 <div id="username"></div>
                 <div id="userSince"></div>
@@ -23,7 +23,10 @@
             </div>
         </div>
         <div id="feed-posts">
-            <div id="section">Posts Feed<br />Posts Feed<br />Posts Feed<br />Posts Feed</div>
+            <div id="feed-submit-post" class="section-full">
+                <input id="post"        class="submit new-post post" type="text"   value="" placeholder="Whatta Ya At??" />
+                <input id="submit-post" class="submit submit-post"   type="submit" value="Submit Post" />
+            </div>
         </div>
     </div>
     <script src="feed.js"></script>    

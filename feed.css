@@ -1,5 +1,28 @@
 body {
     margin: 0;
+    font-size: 16px;
+}
+
+.avatar {
+    height: 100px;
+}
+
+input.post {
+    width: 55rem;
+}
+
+input.submit {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+input.submit-post {
+    border: solid 1px #00BBEC;
+    font-family: Times New Roman;
+    color: #00BBEC;
+    font-weight: bold; 
+    background-color: #FFFFFF;
+    border-radius: 5px;
 }
 
 .logout {
@@ -114,13 +137,13 @@ body {
     overflow: auto;
 }
 
-#feed-posts>#section {
+#feed-posts>.section {
     grid-area: 1/2/1/3;
     background-color: saddlebrown;
     padding: 10px;
 }
 
-#feed-posts>#section-full {
+#feed-posts>.section-full {
     grid-area: 1/1/1/4;
     background-color: lightsteelblue;
 }
