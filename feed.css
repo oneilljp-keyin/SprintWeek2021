@@ -6,9 +6,23 @@ body {
 .avatar {
     height: 100px;
 }
-
-input.post {
+  
+input.post-field {
     width: 55rem;
+}
+
+/* On screens that are 992px or less */
+@media screen and (max-width: 992px) {
+    input.post-field {
+        width: 35rem;
+    }
+  }
+  
+/* On screens that are 600px or less */
+@media screen and (max-width: 600px) {
+    input.post-field {
+        width: 15rem;
+    }
 }
 
 input.submit {
@@ -130,20 +144,21 @@ input.submit-post {
     background-color: beige;
     margin:0 ;
     display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr minmax(0, 600px) 1fr;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
     overflow: auto;
     text-align: center;
-    overflow: auto;
+    align-items: flex-start;
 }
 
 #feed-posts>.section {
-    grid-area: 1/2/1/3;
+    grid-area: 1/1/2/2;
     background-color: saddlebrown;
     padding: 10px;
 }
 
-#feed-posts>.section-full {
-    grid-area: 1/1/1/4;
-    background-color: lightsteelblue;
+#feed-posts>.post {
+    background-color: mediumblue;
+    color: whitesmoke;
+    font-size: 1.25rem;
 }

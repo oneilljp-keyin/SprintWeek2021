@@ -12,14 +12,14 @@
 
 function userInfo() {
 
-    // info stored as: User1#### {UserName, JoinDate, password, friends, followers}
+    // info stored as: User1#### {firstName, surName, email, joinDate, password, friends, followers}
     let user  = JSON.parse(localStorage.getItem("User10000"));
     let joinDate = new Date(user.joinDate);
 
     const monthNames = ["January", "February", "March",     "April",   "May",      "June",
                         "July",    "August",   "September", "October", "November", "December"];
 
-    document.querySelector("#username").innerHTML  = user.userName;
+    document.querySelector("#username").innerHTML  = user.firstName + " " + user.surName;
     document.querySelector("#userSince").innerHTML = "Member Since: " + monthNames[joinDate.getMonth()] + " " + joinDate.getFullYear();
     document.querySelector("#friends_followers").innerHTML = "Friends: " + user.friends + " - Followers: " + user.followers;
 }
@@ -28,14 +28,25 @@ function addPost() {
     let nextPostNum;
     console.log("This is a test");
     if (localStorage.getItem("nextPostNum") !== null) {
-        let nextPostNum = localStorage.getItem("nextPostNum");
+        nextPostNum = localStorage.getItem("nextPostNum");
     } else {
         nextPostNum = 10000;
         localStorage.setItem("nextPostNum", nextPostNum);
     }
 
-    let post = document.getElementById("post").value;
-    console.log("This is another test");
+    let post = document.getElementById("post-field").value;
+    console.log(`This is another test: ${post}`);
+
+    let newPost = document.createElement("div");
+    newPost.id = `post${nextPostNum}`;
+    newPost.className = "post";
+    newPost.innerHTML = post;
+
+    document.getElementById("feed-posts").appendChild(newPost);
+
+    nextPostNum++;
+    localStorage.setItem("nextPostNum", nextPostNum);
+    document.getElementById("post-field").value = "";
 
 }
 
