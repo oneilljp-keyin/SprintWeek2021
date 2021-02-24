@@ -1,0 +1,71 @@
+html {
+    margin: 0%;
+    padding: 0%;
+    background-color: #dfe3ee;
+    font-family: klavika sans-serif;
+    font-size: 16px;
+}
+
+#login-container {
+    display: grid;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "textbox login";
+    justify-items: center;
+    align-items: center;
+    column-gap: 25px;
+}
+    
+#textbox{
+    grid-area: textbox;
+    padding: 5rem;
+}
+    
+#login-forms{
+    grid-area: login;
+    border-radius: 12px;
+    background-color: white;
+    text-align: center;
+}
+
+h1{
+    font-size: 3.5rem;
+    color: #1877f2;
+}
+    
+h2{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.75rem;
+    font-weight: normal;
+    line-height: rem;
+}
+    
+    
+.form input{
+    margin: 5px 10px;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 332px;
+    font-size: 1.25rem;
+}
+    
+.button{
+    padding: 16px;
+    width: 100%;
+    border-radius: 8px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.25rem;
+}
+    
+.login{
+    background-color: #FF99CC;
+    color: #404040;
+}
+    
+.create{
+    background-color: #006533;
+}
