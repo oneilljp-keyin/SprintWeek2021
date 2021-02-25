@@ -7,27 +7,26 @@
     <script type="text/javascript" src="sign_up.js"></script>
     <link type="text/css" rel="stylesheet" href="sign_up.css">
     <link type="text/css" rel="stylesheet" href="feed.css">
+    <link type="text/css" rel="stylesheet" href="login.css">
     <title>Sign up | Yes B'y</title>
 </head>
 <body>
-    <header class="heading"><img src="images/yesby.png" class="header-logo"></header>
-    <a id="login" href="index.html">Log in to existing account</a>
-    <p id="start">Let's create a new account!</p>
-    <div id="sign_in_info">
-        <label for="first_n" id='label_1'>First name:</label>
-        <input type="text" id="first_n">
-        <label for='last_n' id="label_2">Last name:</label>
-        <input type='text' id='last_n'>
-        <label for="birth" id="label_3">Date of Birth:</label>
-        <input type='date' id='birth'>
-        <label for='email' id="label_4">Email address:</label>
-        <input type='email' id='email'>
-        <label for='passowrd' id="label_5">Password:</label>
-        <input type="password" id="password">
-        <label for="confirm_pass" id="label_6">Confirm password:</label>
-        <input type='password' id="confirm_pass">
-        <div id='error'></div>
-        <input type='button' onclick="main()" id='button' value='Create account'>
-    </div> 
+    <div id="signup-container">
+        <img class="header-logo" src="images/yesby.png">
+        <h1>Let's create a new account!</h1>
+        <div id="sign_in_info">
+            <div id="first_n"><input type="text" class="signup" placeholder="&nbsp;&nbsp;First Name" /></div>
+            <div id="last_n"><input type="text" id="last_n" class="signup" placeholder="&nbsp;&nbsp;Last Name" /></div>
+            <div id="blank"></div>
+            <div id="email"><input type="email" id="email" class="signup" placeholder="&nbsp;&nbsp;Email Address" /></div>
+            <div id="email_err"></div>
+            <div id="password"><input type="password" id="password" class="signup" placeholder="&nbsp;&nbsp;Password" /></div>
+            <div id="confrim_pass"><input type="password" id="confirm_pass" class="signup" placeholder="&nbsp;&nbsp;Confirm Password" /></div>
+            <div id="pass_err"></div>
+            <div id="dob">Date of Birth: <input type="date" class="signup" /></div>
+            <div id="create"><input class="button pink" type="button" onclick="main()" id="button" value="Create account"></div>
+            <div id="login"><input class="button green" type="button" onclick="location.href='index.html';" value="Log In To Existing Account" /></div>
+        </div> 
+    </div>
 </body>
 </html>

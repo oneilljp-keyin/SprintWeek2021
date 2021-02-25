@@ -21,7 +21,7 @@ function userInfo() {
 
     document.querySelector("#username").innerHTML  = user.firstName + " " + user.surName;
     document.querySelector("#userSince").innerHTML = "Member Since: " + monthNames[joinDate.getMonth()] + " " + joinDate.getFullYear();
-    document.querySelector("#friends_followers").innerHTML = "Friends: " + user.friends + " - Followers: " + user.followers;
+    // document.querySelector("#friends_followers").innerHTML = "Friends: " + user.friends + " - Followers: " + user.followers;
 }
 
 function addPost() {
@@ -48,6 +48,10 @@ function addPost() {
     localStorage.setItem("nextPostNum", nextPostNum);
     document.getElementById("post-field").value = "";
 
+}
+
+function addComment() {
+    
 }
 
 window.addEventListener("load", userInfo);

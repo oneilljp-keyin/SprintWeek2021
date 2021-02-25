@@ -1,17 +1,25 @@
 html {
-    margin: 0%;
+    margin: 20px;;
     padding: 0%;
-    background-color: #dfe3ee;
+    background-color: #DFE3EE;
     font-family: klavika sans-serif;
     font-size: 16px;
+}
+
+.main-logo {
+    height: 50px;
+}
+
+#login-message {
+    height: 2rem;
 }
 
 #login-container {
     display: grid;
     position: absolute;
-    width: 100vw;
-    height: 100vh;
-    grid-template-columns: 1fr 1fr;
+    width: calc(100vw - 50px);
+    height: calc(100vh - 50px);
+    grid-template-columns: auto 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "textbox login";
     justify-items: center;
@@ -19,9 +27,30 @@ html {
     column-gap: 25px;
 }
     
+/* On screens that are 992px or less */
+@media screen and (max-width: 992px) {
+    #login-container {
+        display: grid;
+        position: absolute;
+        width: calc(100vw - 50px);
+        height: calc(100vh - 50px);
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "textbox"
+                             "login";
+        justify-items: center;
+        align-items: center;
+        row-gap: 25px;
+    }
+    #textbox{
+        grid-area: textbox;
+        padding: 1rem;
+    }
+}
+  
 #textbox{
     grid-area: textbox;
-    padding: 5rem;
+    padding: 3rem;
 }
     
 #login-forms{
@@ -29,43 +58,50 @@ html {
     border-radius: 12px;
     background-color: white;
     text-align: center;
+    padding: 2rem;
 }
 
 h1{
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     color: #1877f2;
+    text-align: center;
 }
     
 h2{
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.75rem;
     font-weight: normal;
-    line-height: rem;
+    line-height: 2rem;
+    text-align: justify;
+    text-justify: inter-word;  
 }
     
     
-.form input{
+.form-input{
     margin: 5px 10px;
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 1rem;
-    width: 332px;
+    width: 20rem;
     font-size: 1.25rem;
 }
     
 .button{
-    padding: 16px;
-    width: 100%;
-    border-radius: 8px;
+    padding: 0.5rem;
+    border-radius: 12px;
     color: white;
     font-family: sans-serif;
     font-size: 1.25rem;
+    text-align: center;
 }
     
-.login{
+.pink{
     background-color: #FF99CC;
     color: #404040;
+    width: 100%;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
     
-.create{
+.green{
     background-color: #006533;
 }
