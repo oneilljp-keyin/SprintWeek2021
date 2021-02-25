@@ -102,7 +102,7 @@ input.submit {
     position: absolute;
     display: grid;
     width: calc(100vw - 20px);
-    grid-template-rows: auto auto 1fr;
+    grid-template-rows: auto auto auto 1fr;
     grid-template-columns: 1fr;
     grid-template-areas: "feed-header"
                          "feed-profile"
@@ -111,6 +111,7 @@ input.submit {
     margin: auto;
     top: 0; bottom: 0; left: 0; right:0;
     row-gap: 10px;
+    align-items: flex-start;
 }
 
 #feed-header {

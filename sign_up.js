@@ -85,7 +85,7 @@ function main(){
             localStorage.setItem("nextUserNum", nextUserNum++);
         }
 
-        localStorage.setItem(`User${nextUserNum}`, JSON.stringify({
+        localStorage.setItem(`user${nextUserNum}`, JSON.stringify({
                 "firstName":first_name, "lastName": last_name, "email": email, 
                 "joinDate": today, "password": password, "dob": birthday}));
 
@@ -102,6 +102,6 @@ function main(){
 // temp.prop1;
 // -----------------------------------------------------------------------------------------------------------------
 
-// info stored as: User1#### {firstName, surName, email, joinDate, password, friends, followers}
+// info stored as: user1#### {firstName, lastName, email, joinDate, password, friends, followers}
 
 document.querySelector("#create_account").addEventListener("click", main);
