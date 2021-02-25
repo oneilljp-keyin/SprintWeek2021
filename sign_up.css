@@ -10,14 +10,15 @@ html {
     margin: auto;
     display: grid;
     grid-template-columns:repeat(2, minmax(200px, 300px));
-    grid-template-rows: repeat(9, auto);
+    grid-template-rows: repeat(10, auto);
     grid-template-areas: "first last"
-                         "blank blank"
+                         "first_err last_err"
                          "email email"
                          "email_err email_err"
                          "passwd confirm"
                          "pass_err pass_err"
                          "dob dob"
+                         "dob_err dob_err"
                          "create create"
                          "login login";
     grid-column-gap: 10px;
@@ -27,15 +28,16 @@ html {
 
 .signup {
     border-radius: 12px;
-    color: white;
+    color: black;
     font-family: sans-serif;
     font-size: 1.25rem;
 }
 
-
 #first_n      {grid-area: first;}
 #last_n       {grid-area: last;}
-#blank        {grid-area: blank; height: 1rem;}
+#first_err    {grid-area: first_err; height: 1rem;}
+#last_err     {grid-area: last_err; height: 1rem;}
+#dob_err      {grid-area: dob_err; height: 1rem;}
 #dob          {grid-area: dob; text-align: center;}
 #email        {grid-area: email; width: 90%;}
 #password     {grid-area: passwd;}
@@ -44,3 +46,8 @@ html {
 #email_err    {color: red; grid-area: email_err; height: 1rem;}
 #create       {grid-area: create; text-align: center;}
 #login        {grid-area: login; text-align: center;}
+
+#date_of_birth {
+    color: #404040;
+    text-align: center;
+}
