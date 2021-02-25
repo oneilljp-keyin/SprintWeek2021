@@ -24,15 +24,14 @@ function getTimeStamp() {
 function userInfo() {
 
     // info stored as: User1#### {firstName, surName, email, joinDate, password, friends, followers}
-    let user  = JSON.parse(localStorage.getItem("user10000"));
-    let joinDate = new Date(user.joinDate);
+    let user  = sessionStorage.getItem("userName");
+    let joinDate = sessionStorage.getItem("joinDate");
 
     const monthNames = ["January", "February", "March",     "April",   "May",      "June",
                         "July",    "August",   "September", "October", "November", "December"];
 
-    document.querySelector("#username").innerHTML  = user.firstName + " " + user.surName;
-    document.querySelector("#userSince").innerHTML = "Member Since: " + monthNames[joinDate.getMonth()] + " " + joinDate.getFullYear();
-    // document.querySelector("#friends_followers").innerHTML = "Friends: " + user.friends + " - Followers: " + user.followers;
+    document.querySelector("#username").innerHTML  = user;
+//    document.querySelector("#userSince").innerHTML = "Member Since: " + monthNames[joinDate.getMonth()] + " " + joinDate.getFullYear();
 }
 
 function addPost() {
@@ -45,8 +44,7 @@ function addPost() {
         localStorage.setItem("nextPostNum", nextPostNum++);
     }
 
-    let user  = JSON.parse(localStorage.getItem("user10000"));
-
+    let user  = sessionStorage.getItem("userName");
     let today = getTimeStamp();
 
     let post = document.getElementById("post-field").value;
@@ -54,7 +52,7 @@ function addPost() {
 
     nextPostNum++;
     localStorage.setItem("nextPostNum", nextPostNum);
-    localStorage.setItem(`post${nextPostNum}`, JSON.stringify({"author": user.firstName+" "+user.surName, "timestamp": today, "post": post}));
+    localStorage.setItem(`post${nextPostNum}`, JSON.stringify({"author": user, "timestamp": today, "post": post}));
 
     document.querySelector("#post-field").value = "";
 
@@ -75,7 +73,7 @@ function addComment(n) {
         localStorage.setItem("nextPostNum", nextCommentNum++);
     }
 
-    let user  = JSON.parse(localStorage.getItem("user10000"));
+    let user  = sessionStorage.getItem("userName");
     let today = getTimeStamp();
 
     let comment = document.getElementById(`comment-field${postNum}`).value;
@@ -83,7 +81,7 @@ function addComment(n) {
     nextCommentNum++;
     localStorage.setItem("nextCommentNum", nextCommentNum);
 
-    localStorage.setItem(`comment${postNum}${nextCommentNum}`, JSON.stringify({"author": user.firstName+" "+user.surName, "timestamp": today, "comment": comment}));
+    localStorage.setItem(`comment${postNum}${nextCommentNum}`, JSON.stringify({"author": user, "timestamp": today, "comment": comment}));
     document.getElementById(`comment-field${postNum}`).value = "";
 
     displayPosts();
@@ -132,7 +130,13 @@ function displayPosts() {
     }
 }
 
+function eraseSession() {
+    sessionStorage.clear();
+    window.location.href = "index.html";
+}
+
 window.addEventListener("load", userInfo);
 window.addEventListener("load", displayPosts);
 
 document.querySelector("#submit-post").addEventListener("click", addPost);
+document.querySelector("#logout_all").addEventListener("click", eraseSession);

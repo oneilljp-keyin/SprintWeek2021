@@ -31,19 +31,22 @@ html {
     color: black;
     font-family: sans-serif;
     font-size: 1.25rem;
+    padding: 0 10px;
 }
 
 #first_n      {grid-area: first;}
 #last_n       {grid-area: last;}
-#first_err    {grid-area: first_err; height: 1rem;}
-#last_err     {grid-area: last_err; height: 1rem;}
-#dob_err      {grid-area: dob_err; height: 1rem;}
 #dob          {grid-area: dob; text-align: center;}
 #email        {grid-area: email; width: 90%;}
 #password     {grid-area: passwd;}
 #confirm_pass {grid-area: confirm;}
+
 #pass_err     {color: red; grid-area: pass_err; height: 1rem;}
 #email_err    {color: red; grid-area: email_err; height: 1rem;}
+#first_err    {color: red; grid-area: first_err; height: 1rem;}
+#last_err     {color: red; grid-area: last_err; height: 1rem;}
+#dob_err      {color: red; grid-area: dob_err; height: 1rem;}
+
 #create       {grid-area: create; text-align: center;}
 #login        {grid-area: login; text-align: center;}
 

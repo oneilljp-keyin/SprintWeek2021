@@ -1,13 +1,32 @@
-function main(){
-    let first_name = document.getElementById("first_n").value;
-    console.log(first_name);
+function checkDOB(dob) {
+    let date = dob;
+    let parts = date.split("-");
+    if (parts[0] >= 1900 && parts[0] <= 2021) {
+        if (parts[1] >= 1 && parts[1] <= 12) {
+            if (parts[2] >= 1 && parts[2] <= 31) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
 
-    let last_name = document.getElementById("last_n").value;
-    let birthday = document.getElementById("birth").value;
+function main(){
+    let first_name = document.querySelector("#first_name").value;
+    let last_name = document.querySelector("#last_name").value;
+    let birthday = document.querySelector("#date_of_birth").value;
     let timecheck = Date.parse(birthday);
-    let email = document.getElementById("email").value.indexOf("@");
-    let password = document.getElementById("password");
-    let confirm = document.getElementById("confirm_pass");
+    let email = document.querySelector("#email_add").value;
+    let email_check = email.indexOf("@");
+    let password = document.querySelector("#pword").value;
+    let confirm = document.querySelector("#confirm_pwd").value;
+
+    console.log(birthday);
     
     let emailOK = false;
     let passOK = false;
@@ -15,50 +34,45 @@ function main(){
     let lastOK = false;
     let dobOK = false;
 
-    console.log(last_name);
-    console.log(birthday);
-    console.log(email);
-    console.log(password);
-
-    let first_err = document.getElementById("first_err");
-    let last_err = document.getElementById("last_err");
-    let dob_err = document.getElementById("dob_err");
+    let first_err = document.querySelector("#first_err");
+    let last_err = document.querySelector("#last_err");
+    let dob_err = document.querySelector("#dob_err");
 
     // Check if first name field is filled out
     if (first_name.length < 1) {
-        document.getElementById("first_err").innerHTML = "* Please Enter a First Name"
+        document.querySelector("#first_err").innerHTML = "* Please Enter a First Name"
       } else {
           firstOK = true;
       }
 
     // Check if last name field is filled out
     if (last_name.length < 1) {
-        document.getElementById("last_err").innerHTML = "* Please Enter a Last Name"
+        document.querySelector("#last_err").innerHTML = "* Please Enter a Last Name"
       } else {
-          firstOK = true;
+          lastOK = true;
       }
 
     // Checks if there is a @ in the email field
-    if (email == -1) {
-        document.getElementById("email_err").innerHTML = "* Invalid Email Address"
+    if (email_check == -1) {
+        document.querySelector("#email_err").innerHTML = "* Invalid Email Address"
       } else {
           emailOK = true;
       }
 
     // checks if the password and confirm are the same
-    if (password.value != confirm.value){
-        document.getElementById("pass_err").innerHTML = "* Passwords do not match";    
+    if (password != confirm){
+        document.querySelector("#pass_err").innerHTML = "* Passwords do not match";    
     } else {
         passOK = true;
     }
 
     // checks if a valid date was entered
-    if (isNaN(timecheck)){
-        document.getElementById("dob_err").innerHTML = "* Invalid Date of Birth Entered";    
+    if (!checkDOB(birthday)){
+        document.querySelector("#dob_err").innerHTML = "* Invalid Date of Birth Entered";    
     } else {
-        passOK = true;
+        dobOK = true;
     }
-
+    console.log(`email ${emailOK} - first ${firstOK} - last ${lastOK} - dob ${dobOK} - pass ${passOK} - `)
     if (emailOK && passOK && lastOK && firstOK && dobOK) {
         let today = new Date(Date.now());
 
@@ -73,10 +87,12 @@ function main(){
 
         localStorage.setItem(`User${nextUserNum}`, JSON.stringify({
                 "firstName":first_name, "lastName": last_name, "email": email, 
-                "joinDate": today, "password": password}));
+                "joinDate": today, "password": password, "dob": birthday}));
 
         sessionStorage.setItem("userName", `${first_name} ${last_name}`);
         sessionStorage.setItem("joinDate", today);
+
+        window.location.href = "feed.html";
     }   
 }
 
@@ -87,3 +103,5 @@ function main(){
 // -----------------------------------------------------------------------------------------------------------------
 
 // info stored as: User1#### {firstName, surName, email, joinDate, password, friends, followers}
+
+document.querySelector("#create_account").addEventListener("click", main);
