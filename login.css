@@ -1,18 +1,14 @@
 html {
-    margin: 20px;;
+    margin: 20px;
     padding: 0%;
     background-color: #DFE3EE;
     font-family: klavika sans-serif;
     font-size: 16px;
 }
 
-.main-logo {
-    height: 50px;
-}
+.main-logo {height: 50px;}
 
-#login-message {
-    height: 2rem;
-}
+#login-message {height: 2rem;}
 
 #login-container {
     display: grid;
@@ -102,6 +98,4 @@ h2{
     padding-right: 3rem;
 }
     
-.green{
-    background-color: #006533;
-}
+.green{background-color: #006533;}

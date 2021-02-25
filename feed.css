@@ -1,5 +1,5 @@
 html {
-    margin: 20px;;
+    margin: 20px;
     padding: 0%;
     font-size: 16px;
     background-color: #DFE3EE;
@@ -228,7 +228,7 @@ input.submit {
     color: #404040;
 }
 
-/* Code for Login in page */
+/* Code for Login in page
 .main-logo {
     height: 50px;
 }
@@ -310,7 +310,7 @@ h2{
 
 /* Code for sign-up page */
 
-#start{
+/* #start{
     text-align: center;
 }
 
@@ -358,4 +358,4 @@ h2{
 #date_of_birth {
     color: #404040;
     text-align: center;
-}
+} */ */
