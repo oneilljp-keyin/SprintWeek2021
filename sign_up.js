@@ -65,15 +65,19 @@ function main(){
       }
 
     // checks if the password and confirm are the same
-    if (password != confirm){
-        document.querySelector("#pass_err").innerHTML = "* Passwords do not match";    
+    if (password.length < 1 && confirm.length < 1) {
+        document.querySelector("#pass_err").innerHTML = "* Password not set";    
     } else {
-        passOK = true;
+        if (password != confirm){
+            document.querySelector("#pass_err").innerHTML = "* Passwords do not match";    
+        } else {
+            passOK = true;
+        }
     }
 
     // checks if a valid date was entered
     if (!checkDOB(birthday)){
-        document.querySelector("#dob_err").innerHTML = "* Invalid Date of Birth Entered";    
+        document.querySelector("#dob_err").innerHTML = "* Invalid Date of Birth";    
     } else {
         dobOK = true;
     }
