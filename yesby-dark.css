@@ -2,21 +2,32 @@ html {
     margin: 20px;
     padding: 0%;
     font-size: 16px;
-    background-color: #DFE3EE;
+    background-color: #121212;
     font-family: klavika sans-serif;
+    color: #DFE3EE;
 }
 
-input.post-field {width: 55rem;}
-input.comment-field {width: 15rem; text-align: center;}
+input.post-field {
+    width: 55rem; 
+    border-radius: 10px;
+    filter: drop-shadow(2px 2px 1px rgba(223, 227, 238, 0.5))
+}
+input.comment-field {
+    width: 15rem; 
+    text-align: center;
+    border-radius: 5px;
+    filter: drop-shadow(2px 2px 1px rgba(223, 227, 238, 0.5))
+}
 input.submit {font-size: 1.25rem; text-align: center;}
 
-h1{
+h1 {
     font-size: 2.5rem;
-    color: #1877f2;
+    color: #0080ff;
     text-align: center;
+    filter: drop-shadow(2px 2px 1px rgba(00, 128, 255, 0.5))
 }
     
-h2{
+h2 {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.75rem;
     font-weight: normal;
@@ -25,7 +36,7 @@ h2{
     text-justify: inter-word;  
 }
 
-.avatar {
+.avatar-main {
     height: 100px;
     filter: drop-shadow(5px 5px 0 #999);
 }
@@ -40,12 +51,33 @@ h2{
     color: whitesmoke;
     border: 1px solid whitesmoke;
     border-radius: 15px;
-    box-shadow: 2px 5px #000;
+    box-shadow: 2px 5px rgba(223, 227, 238, 0.5);
 }
 
 .blue-button:hover    {background-color: darkblue;}
 
 .blue-button:active {
+    background-color: darkblue;
+    box-shadow: 1px 1px rgba(223, 227, 238, 0.5);
+    transform: translateY(4px);
+}
+
+.mode-button {
+    background-color: #1877f2;
+    padding: 5px 5px;
+    font-size: .875rem;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #DFE3EE;
+    border: 1px solid #DFE3EE;
+    border-radius: 10px;
+    box-shadow: 2px 5px #000;
+}
+
+.mode-button:hover    {background-color: darkblue;}
+
+.mode-button:active {
     background-color: darkblue;
     box-shadow: 1px 1px #000;
     transform: translateY(4px);
@@ -54,17 +86,19 @@ h2{
 .button{
     padding: 0.5rem;
     border-radius: 12px;
-    color: white;
+    color: #DFE3EE;
     font-family: sans-serif;
     font-size: 1.25rem;
     text-align: center;
 }
     
 .comment-box {
+    margin: 0.25rem;
+    margin-left: 1.25rem;
     width: calc(100vw - 100px);
     font-size: 0.8625rem;
     border-radius: 12px;
-    background-color: whitesmoke;
+    background-color: #DFE3EE;
     color: #404040;
 }
 
@@ -74,13 +108,17 @@ h2{
     text-align: center;
     cursor: pointer;
     outline: none;
-    color: whitesmoke;
-    border: 1px solid whitesmoke;
+    color: #DFE3EE;
+    border: 1px solid #DFE3EE;
     border-radius: 15px;
     box-shadow: 2px 5px #000;
 }
-
 .comment-button:hover {background-color: darkblue;}
+.comment-button:active {
+    background-color: darkblue;
+    box-shadow: 1px 1px #000;
+    transform: translateY(4px);
+}
 
 .comments {grid-area: comments; text-align: center;}
 
@@ -90,13 +128,17 @@ h2{
     padding: 1rem;
     width: 20rem;
     font-size: 1.25rem;
+    filter: drop-shadow(2px 2px 1px rgba(64, 64, 64, 1.0))
 }
 
-.green{background-color: #006533;}
+.green{
+    background-color: #006533;
+    filter: drop-shadow(2px 2px 1px rgba(64, 64, 64, 1.0))
+}
 
 .header-logo {
     height: 50px;
-    filter: drop-shadow(5px 5px 0 black);
+    filter: drop-shadow(5px 5px 0 rgba(223, 227, 238, 0.5));
 }
 
 .logo {
@@ -104,13 +146,16 @@ h2{
     font-size: 2rem;
     text-align: center;
     outline: none;
-    color: whitesmoke;
-    border: 1px solid whitesmoke;
+    color: #DFE3EE;
+    border: 1px solid #DFE3EE;
     border-radius: 15px;
-    border: 5px solid whitesmoke;
+    border: 5px solid #DFE3EE;
 }
 
-.main-logo {height: 50px;}
+.main-logo {
+    height: 50px;
+    filter: drop-shadow(2px 2px 1px rgba(223, 227, 238, 0.5))
+}
 
 .pink{
     background-color: #FF99CC;
@@ -118,6 +163,7 @@ h2{
     width: 100%;
     padding-left: 3rem;
     padding-right: 3rem;
+    filter: drop-shadow(2px 2px 1px rgba(64, 64, 64, 1.0));
 }
     
 .post-info {
@@ -128,13 +174,14 @@ h2{
 
 .signup {
     border-radius: 12px;
-    color: black;
+    color: #121212;
     font-family: sans-serif;
     font-size: 1.25rem;
     padding: 0 10px;
+    filter: drop-shadow(2px 2px 1px rgba(64, 64, 64, 1.0))
 }
 
-/* .signup-email {width: 400px;} */
+.signup-email {width: 400px;}
 
 .sub-comments {grid-area: sub-comments;}
 
@@ -217,7 +264,7 @@ h2{
 #feed-posts>.post {
     padding: 0.5rem;
     margin: 0.5rem;
-    background-color: pink;
+    background-color: #FF99CC;
     color: #404040;
     border-radius: 15px;
     font-size: 1.25rem;
@@ -228,9 +275,21 @@ h2{
                          "post-info post-info post-info"
                          "sub-comments sub-comments sub-comments"
                          "comments comments comments";
-    justify-items: center;
-    align-items: center;                     
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
 }
+
+#fixed-button {
+    position: fixed;
+    bottom: 7px;
+    right: 5px;
+    width: 80px;
+    z-index: 99;
+}
+
+img {vertical-align: middle;}
+input {vertical-align: middle;}
 
 #login-message {height: 2rem;}
 
@@ -250,7 +309,7 @@ h2{
 #login-forms{
     grid-area: login;
     border-radius: 12px;
-    background-color: white;
+    background-color: rgb(223, 227, 238);
     text-align: center;
     padding: 2rem;
 }
@@ -302,11 +361,11 @@ h2{
 #password     {grid-area: passwd;}
 #confirm_pass {grid-area: confirm;}
 
-#pass_err     {color: red; grid-area: pass_err; height: 1rem;}
-#email_err    {color: red; grid-area: email_err; height: 1rem;}
-#first_err    {color: red; grid-area: first_err; height: 1rem;}
-#last_err     {color: red; grid-area: last_err; height: 1rem;}
-#dob_err      {color: red; grid-area: dob_err; height: 1rem;}
+#pass_err     {color: #FFFF40; grid-area: pass_err; height: 1rem;}
+#email_err    {color: #FFFF40; grid-area: email_err; height: 1rem;}
+#first_err    {color: #FFFF40; grid-area: first_err; height: 1rem;}
+#last_err     {color: #FFFF40; grid-area: last_err; height: 1rem;}
+#dob_err      {color: #FFFF40; grid-area: dob_err; height: 1rem;}
 
 #create       {grid-area: create; text-align: center;}
 #login        {grid-area: login; text-align: center;}
@@ -320,7 +379,11 @@ h2{
   
 /* On screens that are 992px or less */
 @media screen and (max-width: 992px) {
-    input.post-field {width: 35rem;}
+    input.post-field {
+        width: 35rem; 
+        border-radius: 10px;
+        filter: drop-shadow(2px 2px 1px rgba(223, 227, 238, 0.5))
+    }
 
     #login-container {
         display: grid;
@@ -340,5 +403,9 @@ h2{
   
 /* On screens that are 600px or less */
 @media screen and (max-width: 600px) {
-    input.post-field {width: 15rem;}
+    input.post-field {
+        width: 15rem; 
+        border-radius: 10px;
+        filter: drop-shadow(2px 2px 1px rgba(223, 227, 238, 0.5))
+    }
 }
