@@ -16,8 +16,9 @@ in the local storage, acts like a login page.
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="yesby.css">
+    <title>Yes B'y | Log In</title>
+    <link rel="shortcut icon" href="#">
+    <link id="css-mode" rel="stylesheet" href="yesby-light.css">
 </head>
 <body>
     <div id="login-container">
@@ -34,7 +35,9 @@ in the local storage, acts like a login page.
                 <input class="button green" type="button" onclick="location.href='sign_up.html';" value="Create New Account" />
             </div>
         </div>
+        <div id="fixed-button"><input id="mode-switch" type="button" value="Dark Mode" class="mode-button" /></div>
     </div>
-    <script src="login.js"></script>    
+    <script type="text/javascript" src="login.js"></script>
+    <script type="text/javascript" src="mode.js"></script>
 </body>
 </html>

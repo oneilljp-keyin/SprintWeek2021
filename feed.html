@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#">
-    <link rel="stylesheet" href="yesby.css" type="text/css" />
+    <link id="css-mode" rel="stylesheet" href="yesby-light.css" type="text/css" />
     <title>Media Feed | Yes B'y</title>
 </head>
 <body>
@@ -20,7 +20,7 @@
             <div id="right"><input id="logout_all" type="button" value="Logout" class="blue-button" /></div>
         </div>
         <div id="feed-profile">
-            <div id="profile-pic"><img class="avatar" src="images/avatar.png" /></div>
+            <div id="profile-pic"><img class="avatar-main" src="images/avatar-green.png" /></div>
             <div id="profile-info">
                 <div id="username"></div>
                 <div id="userSince"></div>
@@ -32,7 +32,9 @@
             <input id="submit-post" class="submit blue-button" type="submit" value="Submit Post" />
         </div>
         <div id="feed-posts"></div>
+        <div id="fixed-button"><input id="mode-switch" type="button" value="Dark Mode" class="mode-button" /></div>
     </div>
-    <script src="feed.js"></script>    
+    <script type="text/javascript" src="feed.js"></script>    
+    <script type="text/javascript" src="mode.js"></script>    
 </body>
 </html>
