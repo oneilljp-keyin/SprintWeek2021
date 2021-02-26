@@ -31,9 +31,10 @@ function userInfo() {
                         "July",    "August",   "September", "October", "November", "December"];
 
     document.querySelector("#username").innerHTML  = user;
-//    document.querySelector("#userSince").innerHTML = "Member Since: " + monthNames[joinDate.getMonth()] + " " + joinDate.getFullYear();
+
 }
 
+// will add posts to local storage, posts will then be reloaded to main page
 function addPost() {
     let nextPostNum;
     console.log("This is a test");
@@ -57,9 +58,9 @@ function addPost() {
     document.querySelector("#post-field").value = "";
 
     displayPosts();
-
 }
 
+// will add comments to local storage, comments will then be reloaded to main page
 function addComment(n) {
     let postNum = n;
     console.log(`Will This Work?? (${postNum})` );
@@ -88,6 +89,7 @@ function addComment(n) {
 
 }
 
+// function will load posts to the page on first load and anytime a post or comment is added.
 function displayPosts() {
 
     document.getElementById("feed-posts").innerHTML = "";
@@ -130,6 +132,8 @@ function displayPosts() {
     }
 }
 
+// when logout is pressed, function will erase the session storage information, will probably add a function
+// to check if this data is available to validate login
 function eraseSession() {
     sessionStorage.clear();
     window.location.href = "index.html";

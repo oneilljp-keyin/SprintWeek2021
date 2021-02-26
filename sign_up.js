@@ -1,3 +1,16 @@
+// -------- created by Bradley Reid 2021-02-23 ------------------------------------------------------------------------
+// - function to check if passwords match
+//
+// -------- modified by John O'Neill 2021-02-24 -----------------------------------------------------------------------
+// - added a function to also check if email is valid by check if @ is located in string. Also added lines to check if
+//   first name, last name, and birthday are set. After everything is validated, will store everythign in the local
+//   storage to be retrieved when user logins.
+//
+// -------- modified by John O'Neill 2021-02-25 -----------------------------------------------------------------------
+// - added a function to check if birthday is valid and in the right format.
+
+// checks if the birthday is valid format, chances are it will be using the date input tag, but just in case, could use
+// it to check if person is the right age.
 function checkDOB(dob) {
     let date = dob;
     let parts = date.split("-");
@@ -16,27 +29,19 @@ function checkDOB(dob) {
     }
 }
 
+// retrieves all necessary information from all the fields
 function main(){
     let first_name = document.querySelector("#first_name").value;
     let last_name = document.querySelector("#last_name").value;
     let birthday = document.querySelector("#date_of_birth").value;
-    let timecheck = Date.parse(birthday);
     let email = document.querySelector("#email_add").value;
+    // if this variable returns -1, there is no @ in the string
     let email_check = email.indexOf("@");
     let password = document.querySelector("#pword").value;
     let confirm = document.querySelector("#confirm_pwd").value;
 
-    console.log(birthday);
-    
-    let emailOK = false;
-    let passOK = false;
-    let firstOK = false;
-    let lastOK = false;
-    let dobOK = false;
-
-    let first_err = document.querySelector("#first_err");
-    let last_err = document.querySelector("#last_err");
-    let dob_err = document.querySelector("#dob_err");
+    let emailOK = false; let passOK = false; let firstOK = false;
+    let lastOK = false;  let dobOK = false;
 
     // Check if first name field is filled out
     if (first_name.length < 1) {
@@ -96,12 +101,11 @@ function main(){
     }   
 }
 
-// -----------This is an example of how to store & retrieve an object in the local storage -------------------------
+// -----------This is an example of how to store & retrieve an object in the local storage ----------------------------
 // localStorage.setItem('myObject', JSON.stringify({'prop1': "string", 'prop2': "string"}));
 // let temp = JSON.parse(localStorage.get('myObject'));
 // temp.prop1;
-// -----------------------------------------------------------------------------------------------------------------
-
+// --------------------------------------------------------------------------------------------------------------------
 // info stored as: user1#### {firstName, lastName, email, joinDate, password, friends, followers}
 
 document.querySelector("#create_account").addEventListener("click", main);
