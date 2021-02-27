@@ -25,7 +25,9 @@ function checkLogin() {
             if (userInfo.email.toLowerCase() == email_chk.toLowerCase()) {
                 // if email and passwords match, will store information in 
                 // session storage for use in the feeds page.
-                if (userInfo.password == password_chk) {
+                // currently has login to bypass password, just needs to be signed up
+                // with proper email
+                if (password_chk == password_chk) {
                     sessionStorage.setItem("userName", `${userInfo.firstName} ${userInfo.lastName}`);
                     sessionStorage.setItem("joinDate", `${userInfo.joinDate}`);
                     sessionStorage.setItem("userID", `user${num}`);
