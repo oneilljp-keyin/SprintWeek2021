@@ -378,7 +378,7 @@ input {vertical-align: middle;}
 #textbox{grid-area: textbox; padding: 3rem;}
   
 /* On screens that are 992px or less */
-@media screen (min-width: 501px) and (max-width: 992px) {
+@media screen and (max-width: 992px) {
     input.post-field {
         width: 35rem; 
         border-radius: 10px;
@@ -401,8 +401,8 @@ input {vertical-align: middle;}
     #textbox{grid-area: textbox; padding: 1rem;    }
 }
   
-/* On screens that are 425px or less */
-@media screen and (max-width: 500px) {
+/* On screens that are 600px or less */
+@media screen and (max-width: 600px) {
     input.post-field {
         width: 15rem; 
         border-radius: 10px;
@@ -415,49 +415,4 @@ input {vertical-align: middle;}
         width: 100px;
         z-index: 99;
     }
-    
-    #signup-container {
-        display: grid;
-        position: absolute;
-        width: calc(100vw - 40px);
-        height: auto;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto 1fr;
-        grid-template-areas: "head"
-                             "title"
-                             "info";
-        justify-items: center;
-        align-items: flex-start;
-    }
-    
-    #signup-header {grid-area: head;}
-    #signup-title  {grid-area: title;}
-    
-    #sign_in_info {
-        grid-area: info;
-        margin: auto;
-        display: grid;
-        width: calc(100vw - 40px);
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(14, auto);
-        grid-template-areas: "first"
-                             "first_err"
-                             "last"
-                             "last_err"
-                             "email"
-                             "email_err"
-                             "passwd"
-                             "email_err"
-                             "confirm"
-                             "pass_err"
-                             "dob"
-                             "dob_err"
-                             "createe"
-                             "login";
-        justify-items: center;
-        align-items: center;
-    }
-
-    .signup-email {width: auto;}
-    
 }
