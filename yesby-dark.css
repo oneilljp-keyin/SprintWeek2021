@@ -273,8 +273,8 @@ h2 {
     grid-template-rows: repeat(4, auto);
     grid-template-areas: "user-info user-info user-info"
                          "post-info post-info post-info"
-                         "sub-comments sub-comments sub-comments"
-                         "comments comments comments";
+                         "comments comments comments"
+                         "sub-comments sub-comments sub-comments";
     justify-content: center;
     align-items: center;
     vertical-align: middle;
