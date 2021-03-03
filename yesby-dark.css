@@ -1,6 +1,6 @@
 html {
     margin: 20px;
-    padding: 0%;
+    padding: 0;
     font-size: 16px;
     background-color: #121212;
     font-family: klavika sans-serif;
@@ -72,7 +72,7 @@ h2 {
     color: #DFE3EE;
     border: 1px solid #DFE3EE;
     border-radius: 10px;
-    box-shadow: 2px 5px #000;
+    box-shadow: 2px 5px #DFE3EE;
 }
 
 .mode-button:hover    {background-color: darkblue;}
@@ -100,6 +100,7 @@ h2 {
     border-radius: 12px;
     background-color: #DFE3EE;
     color: #404040;
+    filter: drop-shadow(2px 2px 1px rgba(64, 64, 64, 1.0));
 }
 
 .comment-button {
@@ -278,6 +279,7 @@ h2 {
     justify-content: center;
     align-items: center;
     vertical-align: middle;
+    filter: drop-shadow(2px 2px 1px rgba(223, 227, 238, 1.0))
 }
 
 #fixed-button {

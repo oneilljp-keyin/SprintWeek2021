@@ -100,6 +100,7 @@ h2 {
     border-radius: 12px;
     background-color: whitesmoke;
     color: #404040;
+    filter: drop-shadow(2px 2px 1px rgba(64, 64, 64, 1.0));
 }
 
 .comment-button {
@@ -278,6 +279,8 @@ h2 {
     justify-content: center;
     align-items: center;
     vertical-align: middle;
+    filter: drop-shadow(2px 2px 1px rgba(64, 64, 64, 1.0));
+
 }
 
 #fixed-button {
