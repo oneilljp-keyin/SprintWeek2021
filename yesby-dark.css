@@ -378,7 +378,7 @@ input {vertical-align: middle;}
 #textbox{grid-area: textbox; padding: 3rem;}
   
 /* On screens that are 992px or less */
-@media screen and (min-width: 501px) and (max-width: 992px) {
+@media screen and (max-width: 992px) {
     input.post-field {
         width: 35rem; 
         border-radius: 10px;
