@@ -324,11 +324,11 @@ input {vertical-align: middle;}
     position: absolute;
     width: calc(100vw - 40px);
     height: auto;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto;
     grid-template-rows: auto auto 1fr;
-    grid-template-areas: "head head head"
-                         "title title title"
-                         "info info info";
+    grid-template-areas: "head"
+                         "title"
+                         "info";
     justify-items: center;
     align-items: flex-start;
 }
@@ -341,37 +341,33 @@ input {vertical-align: middle;}
     margin: auto;
     display: grid;
     grid-template-columns:repeat(2, minmax(200px, 300px));
-    grid-template-rows: repeat(10, auto);
+    grid-template-rows: repeat(6, auto);
     grid-template-areas: "first last"
-                         "first_err last_err"
                          "email email"
-                         "email_err email_err"
                          "passwd confirm"
-                         "pass_err pass_err"
                          "dob dob"
-                         "dob_err dob_err"
                          "create create"
                          "login login";
     grid-column-gap: 10px;
     justify-items: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
-#first_n      {grid-area: first;}
-#last_n       {grid-area: last;}
-#dob          {grid-area: dob; text-align: center;}
-#email        {grid-area: email;}
-#password     {grid-area: passwd;}
-#confirm_pass {grid-area: confirm;}
+#first_n      {grid-area: first;   height: 3em; text-align: center;}
+#last_n       {grid-area: last;    height: 3em; text-align: center;}
+#dob          {grid-area: dob;     height: 3em; text-align: center;}
+#email        {grid-area: email;   height: 3em; text-align: center;}
+#password     {grid-area: passwd;  height: 3em; text-align: center;}
+#confirm_pass {grid-area: confirm; height: 3em; text-align: center;}
 
-#pass_err     {color: #c00000; grid-area: pass_err; height: 1rem;}
-#email_err    {color: #c00000; grid-area: email_err; height: 1rem;}
-#first_err    {color: #c00000; grid-area: first_err; height: 1rem;}
-#last_err     {color: #c00000; grid-area: last_err; height: 1rem;}
-#dob_err      {color: #c00000; grid-area: dob_err; height: 1rem;}
+#pass_err     {color: #FF0000;}
+#email_err    {color: #FF0000;}
+#first_err    {color: #FF0000;}
+#last_err     {color: #FF0000;}
+#dob_err      {color: #FF0000;}
 
 #create       {grid-area: create; text-align: center;}
-#login        {grid-area: login; text-align: center;}
+#login        {grid-area: login;  text-align: center;}
 
 #date_of_birth {
     color: #404040;
@@ -381,7 +377,7 @@ input {vertical-align: middle;}
 #textbox{grid-area: textbox; padding: 3rem;}
   
 /* On screens that are 992px or less */
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 501px) and (max-width: 992px) {
     input.post-field {
         width: 35rem;
         border-radius: 10px;
@@ -405,7 +401,7 @@ input {vertical-align: middle;}
 }
   
 /* On screens that are 500px or less */
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 0) and (max-width: 500px) {
     input.post-field {
         width: 15rem;
         border-radius: 10px;
@@ -418,7 +414,26 @@ input {vertical-align: middle;}
         width: 100px;
         z-index: 99;
     }
-    
-    .signup-email {width: auto;}
+
+    #sign_in_info {
+        grid-area: info;
+        margin: auto;
+        display: grid;
+        grid-template-columns: minmax(200px, 350px);
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas: "first"
+                             "last"
+                             "email"
+                             "passwd"
+                             "confirm"
+                             "dob"
+                             "create"
+                             "login";
+        grid-column-gap: 10px;
+        justify-items: center;
+        align-items: flex-start;
+    }
+
+    .signup-email {width: 300px;}
     
 }

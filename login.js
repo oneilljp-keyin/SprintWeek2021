@@ -15,7 +15,7 @@ function checkLogin() {
 
     // since there is no way (that i know of) to search keys in the
     // local storage, theis will search for keys between user10000
-    // and user11000 (there should be too many) to validate the
+    // and user11000 (there shouldn't be too many) to validate the
     // login information
     for (let num = 10000; num < 11000; num++) {
         // if the key exists, it will compare the email addresses
