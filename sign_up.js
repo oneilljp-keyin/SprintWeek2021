@@ -48,21 +48,24 @@ function main(){
         document.querySelector("#first_err").innerHTML = "* Please Enter a First Name"
       } else {
           firstOK = true;
-      }
+          document.querySelector("#first_err").innerHTML = ""
+        }
 
     // Check if last name field is filled out
     if (last_name.length < 1) {
         document.querySelector("#last_err").innerHTML = "* Please Enter a Last Name"
       } else {
           lastOK = true;
-      }
+          document.querySelector("#last_err").innerHTML = ""
+        }
 
     // Checks if there is a @ in the email field
     if (email_check == -1) {
         document.querySelector("#email_err").innerHTML = "* Invalid Email Address"
       } else {
           emailOK = true;
-      }
+          document.querySelector("#email_err").innerHTML = ""
+        }
 
     // checks if the password and confirm are the same
     if (password.length < 1 && confirm.length < 1) {
@@ -72,6 +75,7 @@ function main(){
             document.querySelector("#pass_err").innerHTML = "* Passwords do not match";    
         } else {
             passOK = true;
+            document.querySelector("#pass_err").innerHTML = "";
         }
     }
 
@@ -80,6 +84,7 @@ function main(){
         document.querySelector("#dob_err").innerHTML = "* Invalid Date of Birth";    
     } else {
         dobOK = true;
+        document.querySelector("#dob_err").innerHTML = "";
     }
     console.log(`email ${emailOK} - first ${firstOK} - last ${lastOK} - dob ${dobOK} - pass ${passOK} - `)
     if (emailOK && passOK && lastOK && firstOK && dobOK) {

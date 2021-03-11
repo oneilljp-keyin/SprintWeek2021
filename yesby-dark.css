@@ -295,7 +295,7 @@ h2 {
 img {vertical-align: middle;}
 input {vertical-align: middle;}
 
-#login-message {height: 2rem;}
+#login-message {height: 2rem; color: black}
 
 #login-container {
     display: grid;

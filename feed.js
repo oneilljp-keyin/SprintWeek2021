@@ -104,7 +104,7 @@ function displayPosts() {
             newPost.className = "post";
             newPost.innerHTML += `<div class="user-info"><img src="images/avatar.png" height="25"/>&nbsp;${post.author} (${post.timestamp})</div>`;
             newPost.innerHTML += `<div class="post-info">"${post.post}"</div>`;
-            newPost.innerHTML += `<div class="sub-comments"><input id="comment-field${num}" class="comment-field" type="text" value="" placeholder="What Ya Got To Say About That??" /><input id="submit-comment${num}" class="comment-button" type="submit" value="Comment" /></div>`;
+            newPost.innerHTML += `<div class="sub-comments"><input id="comment-field${num}" class="comment-field" type="text" value="" placeholder="What Ya Gotta Say About Dat??" /><input id="submit-comment${num}" class="comment-button" type="submit" value="Comment" /></div>`;
             newPost.innerHTML += `<div id="comments${num}"></div>`;
         
             document.getElementById("feed-posts").appendChild(newPost);
