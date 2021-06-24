@@ -64,12 +64,10 @@ h2 {
     border: 1px solid #DFE3EE;
     border-radius: 10px;
 }
-.mode-button:hover    {background-color: darkblue;}
-.mode-button:active {
-    background-color: darkblue;
-    box-shadow: 1px 1px #000;
-    transform: translateY(4px);
-}
+.mode-button:hover  { background-color: darkblue; }
+.mode-button:active { background-color: darkblue;
+                      box-shadow: 1px 1px #000;
+                      transform: translateY(4px); }
 
 .button{
     padding: 0.5rem;

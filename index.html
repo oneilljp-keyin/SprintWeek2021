@@ -14,31 +14,29 @@ in the local storage, acts like a login page.
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yes B'y | Log In</title>
-    <link rel="shortcut icon" href="#">
-    <link rel="stylesheet" href="yesby.css">
-    <link id="css-mode" rel="stylesheet" href="yesby-light.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yes B'y | Log In</title>
+  <link rel="icon" href="favicon.ico?v=2" />
+  <link rel="stylesheet" href="yesby.css"       type="text/css">
+  <link rel="stylesheet" href="yesby-light.css" type="text/css" id="css-mode">
 </head>
 <body>
-    <div id="login-container">
-        <div id="textbox">
-            <img class="main-logo" src="images/yesby_font.png">&nbsp;&nbsp;&nbsp;<img class="main-logo" src="images/yesby_bg.png">
-            <h2>Yes B'y helps you connect and share with the people in your life.</h2>
-        </div>
-        <div id="login-forms">
-            <!-- <div class="form"> -->
-                <input class="form-input"  id="login_email" type="text" placeholder= "Enter your email"><br>
-                <input class="form-input"  id="login_psswd" type="password" placeholder="Password"><br>
-                <input class="button pink" id="login_main"  type="button" value="Log In" /><br />
-                <div id="login-message"></div>
-                <input class="button green" type="button" onclick="location.href='sign_up.html';" value="Create New Account" />
-            <!-- </div> -->
-        </div>
-        <div id="fixed-button"><input id="mode-switch" type="button" value="Dark Mode" class="mode-button" /></div>
+  <div id="login-container">
+    <div id="textbox">
+      <img class="main-logo" src="images/yesby_font.png">&nbsp;&nbsp;&nbsp;<img class="main-logo" src="images/yesby_bg.png">
+      <h2>Yes B'y helps you connect and share with the people in your life.</h2>
     </div>
-    <script type="text/javascript" src="login.js"></script>
-    <script type="text/javascript" src="mode.js"></script>
+    <div id="login-forms">
+      <input class="form-input"  id="login_email" type="text" placeholder= "Enter your email"><br>
+      <input class="form-input"  id="login_psswd" type="password" placeholder="Password"><br>
+      <input class="button pink" id="login_main"  type="button" value="Log In" /><br />
+      <div id="login-message"></div>
+      <input class="button green" type="button" onclick="location.href='sign_up.html';" value="Create New Account" />
+    </div>
+    <div id="fixed-button"><input id="mode-switch" type="button" value="Dark Mode" class="mode-button" /></div>
+  </div>
+  <script type="text/javascript" src="login.js"></script>
+  <script type="text/javascript" src="mode.js"></script>
 </body>
 </html>
